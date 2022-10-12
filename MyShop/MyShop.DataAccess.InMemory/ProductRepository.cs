@@ -43,6 +43,19 @@ namespace MyShop.DataAccess.InMemory
                 throw new Exception("Product not found ");
             }
         }
+        public void Delete(string Id)
+        {
+            Product productToDelete = products.Find(p => p.Id == Id);
+            if (productToDelete != null)
+            {
+                products.Remove(productToDelete);
+            }
+            else
+            {
+                throw new Exception("Product not found ");
+            }
+        }
+
         public Product Find(string Id)
         {
             Product product = products.Find(p => p.Id == Id);
@@ -56,18 +69,10 @@ namespace MyShop.DataAccess.InMemory
             }
         }
 
-        public void Delete (string Id)
+        public IQueryable<Product> Collection()
         {
-            Product productToDelete = products.Find(p => p.Id == Id);
-            if (productToDelete != null)
-            {
-                products.Remove(productToDelete);
-            }
-            else
-            {
-                throw new Exception("Product not found ");
-            }
+            return products.AsQueryable();
         }
-
+        
     }
 }
