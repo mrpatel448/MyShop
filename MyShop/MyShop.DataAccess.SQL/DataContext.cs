@@ -40,5 +40,11 @@ namespace MyShop.DataAccess.SQL
         //Pacakage manager console , select dataaccess.sql
         //Add-Migration AddBasket
         //Update-Database
+
+        public DbSet<Customer> Customers { get; set; }
+
+        //Pacakage manager console , select dataaccess.sql
+        //Add-Migration AddCustomers
+        //Update-Database
     }
 }
