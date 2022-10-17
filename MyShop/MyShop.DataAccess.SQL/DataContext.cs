@@ -18,7 +18,8 @@ namespace MyShop.DataAccess.SQL
 
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
-    
+
+
         // In the package manager console
         // View -> Other windows -> Package Manager Console
         //
@@ -32,5 +33,12 @@ namespace MyShop.DataAccess.SQL
 
         // It will generate migration file in Migrations folder
         // it will create database in SQL
+
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+
+        //Pacakage manager console , select dataaccess.sql
+        //Add-Migration AddBasket
+        //Update-Database
     }
 }
